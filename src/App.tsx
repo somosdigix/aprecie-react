@@ -1,26 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
 
+type ConteudoProps = {
+    text: string;
+    img: any;
+
+};
+const Conteudo = ({ text, img }: ConteudoProps) => {
+    return (<h1>{text},{img}</h1>
+
+
+    );
+};
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Codigo novo com login funcionando
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    const [counst, setCount] = useState(0);
+
+    return (
+     
+        <div className="App">
+          
+          <div className='bloco-mensagem'>
+           <span >
+                <img src="/logo.digix.png" className='logo' />
+            </span>
+
+            <div className="frase">
+           
+            <p>O lugar para <b className='primeiro-destaque'>reconhecer</b> o que há</p>
+            <p> de melhor em cada um <b className='segundo-destaque'>um de nós</b>.</p>
+            </div>
+            
+            </div>
+            <div className='bloco-login'>
+                <form className='formulario'>
+                  <div className='campo-login'>
+                    <input id="cpf"  type="text" required/>
+                    <label className="label" >Me diga,qual é seu cpf? </label>
+                    </div>  
+                    
+                     </form>
+            </div>
+        </div>
+
+    );
+
+
+};
 
 export default App;
