@@ -1,0 +1,160 @@
+.botao-modal {
+    background-color: #D34AF4;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: -1;
+}
+
+.modal--container {
+    background-color: #2c006a;
+    color: white;
+    padding: 30px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+.container--pilares {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    margin: 24px auto;
+
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-pilar {
+    display: none;
+}
+
+.pilar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    border: 1px solid #D34AF4;
+    border-radius: 12px;
+
+    padding: 5px;
+
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.pilar:checked {
+    background-color: #D34AF4;
+}
+
+.container-descricao {
+    margin: 32px 0;
+    width: 100%;
+}
+
+#descricao-reconhecimento {
+    border-radius: 12px;
+    padding: 15px;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+.contagem-caracteres {
+    padding-left: 8px;
+}
+
+.container-botoes {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.botao {
+    border-radius: 5px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    width: 50%;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botao-fundo-rosa {
+    background-color: #D34AF4;
+}
+
+.botao-borda-rosa {
+    border: 1px solid #D34AF4;
+}
+
+@media (min-width: 768px) {
+    .modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1040;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal--container {
+        width: 80%;
+        height: auto;
+        max-width: 800px;
+        max-height: 550px;
+
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        border-radius: 12px;
+    }
+
+    .container--pilares {
+        flex-direction: row;
+        margin: 32px auto;
+    }
+
+    .pilar {
+        width: 10rem;
+        height: 8rem;
+        font-size: 24px;
+    }
+
+    .pilar:hover {
+        background-color: #D34AF4;
+    }
+
+    .container-botoes {
+        justify-content: end;
+    }
+
+    .botao {
+        width: 200px;
+    }
+}
