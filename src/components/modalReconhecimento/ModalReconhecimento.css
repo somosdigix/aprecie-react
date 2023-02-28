@@ -157,6 +157,9 @@ input[type=radio]:checked+label,
         font-size: 24px;
     }
 
+    .pilar{
+        width: auto;
+    }
     .pilar:hover {
         background-color: #D34AF4;
     }
