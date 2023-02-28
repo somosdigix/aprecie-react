@@ -13,7 +13,6 @@ type BuscaProps = {
 
 export const Busca = (props: BuscaProps) => {
     const [colaboradores, setColaboradores] = useState<IColaborador[]>([]);
-
     useEffect(() => {
         ReconhecimentosService.todos_os_pilares_e_colaboradores().then((data) => {
             setColaboradores(data.colaboradores);
@@ -25,12 +24,21 @@ export const Busca = (props: BuscaProps) => {
 
     useEffect(() => {
         if (colaboradorBuscado) {
-            setColaboradoresFiltrados(colaboradores.filter((colaborador) => colaborador.nome.toLowerCase().includes(colaboradorBuscado.toLowerCase())));
+            setColaboradoresFiltrados(colaboradores.filter((colaborador) => colaborador.nome.toLowerCase().normalize("NFD").replace(/[^a-zA-Z\s]/g, "").includes(colaboradorBuscado.toLowerCase().normalize("NFD").replace(/[^a-zA-Z\s]/g, ""))));
+            if (colaboradoresFiltrados.length > 0) {
+                setResultadosBusca(true);
+            }
+            else {
+                setResultadosBusca(false);
+            }
         }
-        else{
+        else {
+            setResultadosBusca(false);
             setColaboradoresFiltrados([])
         }
     }, [colaboradorBuscado])
+
+    const [resultadosBusca, setResultadosBusca] = useState(false);
 
     return (
         <div className='busca-container'>
@@ -40,12 +48,13 @@ export const Busca = (props: BuscaProps) => {
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                 </svg>
             </div>
-
-            <div className="resultado">
+            {resultadosBusca ? <div className="resultado" id='resultado'>
                 {colaboradoresFiltrados.length > 0 ? colaboradoresFiltrados.map(colaborador => {
                     return <p className='resultado-item' key={colaborador.id}> {colaborador.nome} </p>
                 }) : <div></div>}
-            </div>
+            </div> : null}
+
+
         </div>
     );
 }
