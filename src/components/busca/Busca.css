@@ -63,3 +63,9 @@
         right: 30px;
     }
 }
+
+@media (max-width: 350px) {
+    .campo-busca>input {
+        font-size: 12px;
+    }
+}

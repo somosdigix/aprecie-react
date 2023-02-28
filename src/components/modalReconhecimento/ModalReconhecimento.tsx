@@ -7,22 +7,25 @@ export const ModalReconhecimento = () => {
             <div className='modal--container'>
                 <Busca texto="Quem você quer reconhecer?" />
                 <div className="container--pilares">
-                    <label className='pilar'>
-                        Colaborar Sempre
-                        <input type="radio" name="pilar" value={"colaborarSempre"} className='input-pilar' checked={true} />
-                    </label>
-                    <label className='pilar'>
-                        Fazer Diferente
-                        <input type="radio" name="pilar" value={"fazerDiferente"} className='input-pilar' />
-                    </label>
-                    <label className='pilar'>
-                        Focar nas Pessoas
-                        <input type="radio" name="pilar" value={"focarNasPessoas"} className='input-pilar' />
-                    </label>
-                    <label className='pilar'>
-                        Planejar, Entregar, Aprender
-                        <input type="radio" name="pilar" value={"PlanejarEntregarAprender"} className='input-pilar' />
-                    </label>
+                    <div className="pilar pilar-colaborarSempre">
+                        <input type="radio" name="pilar" value={"colaborarSempre"} className='input-pilar' defaultChecked id='colaborarSempre' />
+                        <label htmlFor='colaborarSempre' className='pilarLabel'> Colaborar Sempre </label>
+                    </div>
+
+                    <div className="pilar pilar-fazerDiferente">
+                        <input type="radio" name="pilar" value={"fazerDiferente"} className='input-pilar' id='fazerDiferente' />
+                        <label htmlFor='fazerDiferente' className='pilarLabel'> Fazer Diferente </label>
+                    </div>
+
+                    <div className="pilar pilar-focarNasPessoas">
+                        <input type="radio" name="pilar" value={"focarNasPessoas"} className='input-pilar' id='focarNasPessoas' />
+                        <label htmlFor='focarNasPessoas' className='pilarLabel'>Focar nas Pessoas </label>
+                    </div>
+
+                    <div className="pilar pilar-PlanejarEntregarAprender">
+                        <input type="radio" name="pilar" value={"PlanejarEntregarAprender"} className='input-pilar' id='PlanejarEntregarAprender' />
+                        <label htmlFor='PlanejarEntregarAprender' className='pilarLabel'> Planejar, Entregar, Aprender</label>
+                    </div>
                 </div>
                 <div className="container-descricao">
                     <textarea name="descricao" id="descricao-reconhecimento" placeholder='Digite seu reconhecimento' maxLength={220} cols={30} rows={5}></textarea>
