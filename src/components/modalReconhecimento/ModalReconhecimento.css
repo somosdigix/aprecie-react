@@ -61,7 +61,8 @@
     box-sizing: border-box;
 }
 
-.pilar:checked {
+.pilar:checked,
+.pilar:hover {
     background-color: #D34AF4;
 }
 
@@ -108,6 +109,10 @@
 
 .botao-borda-rosa {
     border: 1px solid #D34AF4;
+}
+
+.botao-borda-rosa:hover {
+    background-color: rgba(211, 74, 244, 0.4);
 }
 
 @media (min-width: 768px) {

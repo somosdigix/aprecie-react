@@ -1,7 +1,11 @@
-.campo-busca{
+.busca-container {
+    position: relative;
+}
+
+.campo-busca {
     width: 100%;
     background-color: #fff;
-    border-radius: 12px;
+    border-radius: 8px;
     height: 50px;
     padding: 8px;
     display: flex;
@@ -9,18 +13,53 @@
     box-sizing: border-box;
 }
 
-.campo-busca > input {
+.campo-busca>input {
     width: 100%;
     height: 100%;
     border: none;
     font-size: 15px;
 }
 
-.campo-busca > svg {
+.campo-busca>svg {
     color: black;
     width: 18px;
     height: 18px;
     justify-self: end;
     position: absolute;
-    right: 50px;
+    right: 15px;
+}
+
+.resultado {
+    display: none;
+    position: absolute;
+    z-index: 1;
+
+    background-color: #fff;
+    color: black;
+    box-shadow: 0 2px 4px 0 rgba(34, 36, 38, .12), 0 2px 10px 0 rgba(34, 36, 38, .08);
+
+    width: 100%;
+    margin-top: 5px;
+
+    border-radius: 5px;
+    border: 1px solid #f5f5f5;
+}
+
+.resultado-item {
+    padding: 10px;
+    margin: 0;
+
+    box-sizing: border-box;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.resultado-item:hover {
+    background-color: #f5f5f5;
+}
+
+@media (min-width: 768px) {
+    .campo-busca>svg {
+        right: 30px;
+    }
 }
