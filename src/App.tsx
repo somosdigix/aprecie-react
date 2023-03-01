@@ -13,7 +13,7 @@ function App() {
         </svg>
       </button>
 
-      {modalVisivel ? <ModalReconhecimento /> : null}
+      <ModalReconhecimento visivel={modalVisivel} setModalVisivel={() => setModalVisivel(!modalVisivel) }/>
     </div>
   );
 }
